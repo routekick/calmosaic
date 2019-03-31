@@ -1,23 +1,17 @@
-module.exports = function( grunt ) {
+module.exports = function (grunt) {
 
-	grunt.initConfig( {
-
-		// Import package manifest
-		pkg: grunt.file.readJSON( "package.json" ),
-
-		// Banner definitions
+	grunt.initConfig({
+		pkg: grunt.file.readJSON("package.json"),
 		meta: {
 			banner: "/*\n" +
-			" *  <%= pkg.title || pkg.name %> - v<%= pkg.version %>\n" +
-			" *  <%= pkg.description %>\n" +
-			" *  <%= pkg.homepage %>\n" +
-			" *\n" +
-			" *  Made by <%= pkg.author.name %>\n" +
-			" *  Under <%= pkg.license %> License\n" +
-			" */\n"
+				" *  <%= pkg.title || pkg.name %> - v<%= pkg.version %>\n" +
+				" *  <%= pkg.description %>\n" +
+				" *  <%= pkg.homepage %>\n" +
+				" *\n" +
+				" *  Made by <%= pkg.author.name %>\n" +
+				" *  Under <%= pkg.license %> License\n" +
+				" */\n"
 		},
-
-		// Concat definitions
 		concat: {
 			dist: {
 				options: {
@@ -30,33 +24,15 @@ module.exports = function( grunt ) {
 				}
 			}
 		},
-
-		// Lint definitions
-		jshint: {
-			files: [ "src/jquery.CalendarHeatmap.js", "test/**/*" ],
-			options: {
-				jshintrc: ".jshintrc"
-			}
-		},
-
-		jscs: {
-			src: "src/**/*.js",
-			options: {
-				config: ".jscsrc"
-			}
-		},
-
-		// Minify definitions
 		uglify: {
 			dist: {
-				src: [ "dist/jquery.CalendarHeatmap.js" ],
+				src: ["dist/jquery.CalendarHeatmap.js"],
 				dest: "dist/jquery.CalendarHeatmap.min.js"
 			},
 			options: {
 				banner: "<%= meta.banner %>"
 			}
 		},
-
 		less: {
 			production: {
 				files: {
@@ -64,7 +40,6 @@ module.exports = function( grunt ) {
 				}
 			}
 		},
-
 		cssmin: {
 			options: {
 				mergeIntoShorthands: false,
@@ -76,35 +51,13 @@ module.exports = function( grunt ) {
 				}
 			}
 		},
-
-		// karma test runner
-		karma: {
-			unit: {
-				configFile: "karma.conf.js",
-				background: true,
-				singleRun: false,
-				browsers: [ "Chrome" ]
-			},
-
-			//continuous integration mode: run tests once in PhantomJS browser.
-			travis: {
-				configFile: "karma.conf.js",
-				singleRun: true,
-				browsers: [ "Chrome" ]
-			}
-		},
-
 		devserver: {
 			base: "./demo"
 		},
-		// watch for changes to source
-		// Better than calling grunt a million times
-		// (call 'grunt watch')
 		watch: {
-			files: [ "src/*", "test/**/*" ],
-			tasks: [ "default" ]
+			files: ["src/*"],
+			tasks: ["build"]
 		},
-
 		concurrent: {
 			options: {
 				logConcurrentOutput: true
@@ -113,24 +66,18 @@ module.exports = function( grunt ) {
 				tasks: ["devserver", "watch"]
 			}
 		}
+	});
 
-	} );
+	grunt.loadNpmTasks("grunt-contrib-concat");
+	grunt.loadNpmTasks("grunt-contrib-uglify");
+	grunt.loadNpmTasks("grunt-contrib-less");
+	grunt.loadNpmTasks("grunt-contrib-cssmin");
+	grunt.loadNpmTasks("grunt-contrib-watch");
+	grunt.loadNpmTasks("grunt-devserver");
+	grunt.loadNpmTasks("grunt-concurrent");
 
-	grunt.loadNpmTasks( "grunt-contrib-concat" );
-	grunt.loadNpmTasks( "grunt-contrib-jshint" );
-	grunt.loadNpmTasks( "grunt-jscs" );
-	grunt.loadNpmTasks( "grunt-contrib-uglify" );
-	grunt.loadNpmTasks( "grunt-contrib-less" );
-	grunt.loadNpmTasks( "grunt-contrib-cssmin" );
-	grunt.loadNpmTasks( "grunt-contrib-watch" );
-	grunt.loadNpmTasks( "grunt-karma" );
-	grunt.loadNpmTasks( "grunt-devserver" );
-	grunt.loadNpmTasks( "grunt-concurrent" );
-
-	grunt.registerTask( "travis", [ "jshint", "karma:travis" ] );
-	grunt.registerTask( "lint", [ "jshint", "jscs" ] );
-	grunt.registerTask( "build", [ "less", "cssmin", "concat", "uglify" ] );
-	grunt.registerTask( "default", [ "jshint", "build", "karma:unit:run" ] );
-	grunt.registerTask( "dev", ['concurrent:dev']);
+	grunt.registerTask("build", ["less", "cssmin", "concat", "uglify"]);
+	grunt.registerTask("default", ["build"]);
+	grunt.registerTask("dev", ['concurrent:dev']);
 
 }
