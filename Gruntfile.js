@@ -94,12 +94,24 @@ module.exports = function( grunt ) {
 			}
 		},
 
+		devserver: {
+			base: "./demo"
+		},
 		// watch for changes to source
 		// Better than calling grunt a million times
 		// (call 'grunt watch')
 		watch: {
 			files: [ "src/*", "test/**/*" ],
 			tasks: [ "default" ]
+		},
+
+		concurrent: {
+			options: {
+				logConcurrentOutput: true
+			},
+			dev: {
+				tasks: ["devserver", "watch"]
+			}
 		}
 
 	} );
@@ -112,9 +124,13 @@ module.exports = function( grunt ) {
 	grunt.loadNpmTasks( "grunt-contrib-cssmin" );
 	grunt.loadNpmTasks( "grunt-contrib-watch" );
 	grunt.loadNpmTasks( "grunt-karma" );
+	grunt.loadNpmTasks( "grunt-devserver" );
+	grunt.loadNpmTasks( "grunt-concurrent" );
 
 	grunt.registerTask( "travis", [ "jshint", "karma:travis" ] );
 	grunt.registerTask( "lint", [ "jshint", "jscs" ] );
 	grunt.registerTask( "build", [ "less", "cssmin", "concat", "uglify" ] );
 	grunt.registerTask( "default", [ "jshint", "build", "karma:unit:run" ] );
-};
+	grunt.registerTask( "dev", ['concurrent:dev']);
+
+}
