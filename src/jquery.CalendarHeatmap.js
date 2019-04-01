@@ -1,5 +1,5 @@
+/* global moment */
 (function ($) {
-
     "use strict";
 
     // Default Options
@@ -52,7 +52,6 @@
             }
         },
         parse: function () {
-
             var type = $.type(this.data);
             if (["array", "object"].indexOf(type) === -1) {
                 console.log("Invalid data source");
@@ -125,7 +124,6 @@
             return str.length < max ? this.pad("0" + str, max) : str;
         },
         calculateBins: function (events) {
-
             // Calculate bins for events
             var arr = [];
             var i;
@@ -194,7 +192,6 @@
 
             // Assign bins to counts
             for (i in events) {
-
                 if (events[i].count === 0) {
                     events[i].level = 0;
                 } else if (events[i].count - firstStep === 0) {
@@ -220,7 +217,6 @@
             return 0;
         },
         matchDate: function (obj, key) {
-
             if (this.idx[key]) {
                 return obj[this.idx[key]];
             } else {
@@ -247,7 +243,6 @@
                 var swd = this.settings.weekStartDay || 1;
 
                 for (var i = 0; i < 7; i++) {
-
                     var dayName = moment().weekday((i + swd)).format("ddd");
                     var dayNumber = moment().weekday((i + swd)).format("d");
                     if ((i - 1) % 2) {
@@ -270,7 +265,6 @@
             }
         },
         calendarHeatmap: function () {
-
             var data = this.parse();
 
             if ($.type(data) !== "array") {
@@ -310,7 +304,6 @@
 
             // Start building the months
             for (i = months; i > 0; i--) {
-
                 var month = currMonth - i;
                 var year = currYear;
                 if (month < 0) {
@@ -366,7 +359,6 @@
                         }).appendTo(
                             $days
                         );
-
                     } else {
                         $("<li/>", {
                             "class": "ch-day"
@@ -379,7 +371,6 @@
 
             // Add a legend
             if (this.settings.legend.show) {
-
                 // Add the legend container
                 $("<div>", {
                         class: "ch-legend"
@@ -430,5 +421,4 @@
             }
         });
     };
-
 })(jQuery);
