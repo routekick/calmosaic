@@ -14,7 +14,7 @@ This [jQuery] plugin allows to conveniently display data like contributions on a
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/routekick/jquery-calendar-heatmap@2.0.0/dist/jquery.CalendarHeatmap.min.css" />
 
     <!-- Don't forget to add it after jQuery and moment -->
-    <script src="https://cdn.jsdelivr.net/gh/routekick/jquery-calendar-heatmap@2.0.0/dist/jquery.CalendarHeatmap.min.css"></script>
+    <script src="https://cdn.jsdelivr.net/gh/routekick/jquery-calendar-heatmap@2.0.0/dist/jquery.CalendarHeatmap.min.js"></script>
     ```
 
 ## Usage
