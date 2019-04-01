@@ -56,60 +56,63 @@
 @standard-3: rgb(0,158,71);
 @standard-4: rgb(0,117,58);
 
-.ch {
-    display: table !important;
-    clear: both;
+/* Article - https://bitsofco.de/github-contribution-graph-css-grid/ */
+
+/* Grid-related CSS */
+
+:root {
+    --square-size: 15px;
+    --square-gap: 5px;
+    --week-width: calc(var(--square-size) + var(--square-gap));
 }
 
-.ch-month, .ch-week-labels {
-    font-size: 0;
-    display: inline-block;
-    white-space: normal;
-    margin: 0 4px;
+.ch-months { grid-area: months; }
+.ch-days { grid-area: days; }
+.ch-legend { grid-area: legend; }
+
+.ch-graph {
+    display: inline-grid;
+    grid-template-areas: "months"
+                        "days"
+                        "legend";
+    grid-template-columns: auto 1fr;
+    grid-gap: 10px;
+    padding: 20px;
+    border: 1px #e1e4e8 solid;
+    margin: 20px;
 }
 
-.ch-week, .ch-day-labels {
-    display: inline-block;
-    width: 11px;
-    box-sizing: content-box;
+.ch-months {
+    display: grid;
+    /* Max 12 Month*/
+    grid-template-columns: calc(var(--week-width) * 4)
+                            calc(var(--week-width) * 4)
+                            calc(var(--week-width) * 4)
+                            calc(var(--week-width) * 5)
+                            calc(var(--week-width) * 4)
+                            calc(var(--week-width) * 4)
+                            calc(var(--week-width) * 5)
+                            calc(var(--week-width) * 4)
+                            calc(var(--week-width) * 4)
+                            calc(var(--week-width) * 5)
+                            calc(var(--week-width) * 4)
+                            calc(var(--week-width) * 5);
+    list-style: none;
+    padding: 0;
 }
 
-.ch-day-labels {
-    width:inherit;
-}
-
-.ch-month-label {
-    text-align: center;
-    font-size: 12px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.ch-day-label {
-    text-align: center;
-    font-size: 12px;
-    display: block;
-    margin: 0;
-    line-height: 11px;
-    box-sizing: content-box;
+.ch-days {
+    display: grid;
+    grid-gap: var(--square-gap);
+    grid-template-rows: repeat(7, var(--square-size));
+    grid-auto-flow: column;
+    grid-auto-columns: var(--square-size);
+    list-style: none;
+    padding: 0;
 }
 
 .ch-day {
-    display: inline-block;
-    width: 9px;
-    height: 9px;
-    border: 1px solid @day-border;
-    background-color: @day-background;
-    margin: 0;
-    box-sizing: content-box;
-}
-
-.ch-day.is-outside-month,
-.ch-lvl.is-outside-month,
-.ch-day.is-outside-month:hover,
-.ch-lvl.is-outside-month:hover {
-    background-color: transparent;
-    border-color: transparent;
+    background-color: #ebedf0;
 }
 
 .ch-day.lvl-0,
