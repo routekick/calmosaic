@@ -13,7 +13,7 @@ This [jQuery] plugin allows to conveniently display data like contributions on a
     ```html
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/routekick/jquery-calendar-heatmap/dist/jquery.CalendarHeatmap.min.css" />
 
-    <!-- Don't forget to add it after jQuery -->
+    <!-- Don't forget to add it after jQuery and moment -->
     <script src="https://cdn.jsdelivr.net/gh/routekick/jquery-calendar-heatmap/dist/jquery.CalendarHeatmap.min.css"></script>
     ```
 
@@ -26,13 +26,7 @@ This [jQuery] plugin allows to conveniently display data like contributions on a
     <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
     ```
 
-2. Include the plugin *after* [jQuery] and [Moment.js]:
-
-    ```html
-    <script src="dist/jquery.CalendarHeatmap.min.js"></script>
-    ```
-
-3. When the DOM is ready call the plugin:
+2. When the DOM is ready call the plugin:
 
     ```JavaScript
     $("#element").CalendarHeatmap( data, options );
@@ -110,6 +104,7 @@ There is a set of different color gradients available. By default `standard` is 
 The following gradients are available based of [Matplotlib] for Python: `blue`, `earth`, `electric`, `green`, `picknick`, `red`, `teal`, `standard`, `viridis`. If you want to define your own color gradient, use `custom` and add the classes defining the colors to your css stylesheet as described below.
 
 #### Custom Gradient
+
 Just add the colors to be used for the 4 steps as in the example. In this case the name set for `coloring` would be the base class name `custom`.
 
 ```css
