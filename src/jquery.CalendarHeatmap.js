@@ -23,10 +23,6 @@
                 align: "right",
                 minLabel: "Less",
                 maxLabel: "More"
-            },
-            tooltips: {
-                show: false,
-                options: {}
             }
         };
 
@@ -360,12 +356,6 @@
                             .addClass(this.settings.coloring + "-" + i);
                     }
                 }
-            }
-
-            // Add tooltips to days and steps
-            if (this.settings.tooltips.show && typeof $.fn.tooltip === "function") {
-                $("[data-toggle=\"tooltip\"]", this.element)
-                    .tooltip(this.settings.tooltips.options);
             }
         }
     });
