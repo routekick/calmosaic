@@ -223,47 +223,6 @@
                 return null;
             }
         },
-        addWeekColumn: function () {
-            if (this.settings.labels.days) {
-                $(".ch-year", this.element)
-                    .append("<div class=\"ch-week-labels\"></div>");
-
-                $(".ch-week-labels", this.element)
-                    .append("<div class=\"ch-week-label-col\"></div>");
-
-                $(".ch-week-label-col", this.element)
-                    .append("<div class=\"ch-day-labels\"></div>");
-
-                // If month labels are displayed a placeholder needs to be added
-                if (this.settings.labels.months) {
-                    $(".ch-week-labels", this.element)
-                        .append("<div class=\"ch-month-label\">&nbsp;</div>");
-                }
-
-                var swd = this.settings.weekStartDay || 1;
-
-                for (var i = 0; i < 7; i++) {
-                    var dayName = moment().weekday((i + swd)).format("ddd");
-                    var dayNumber = moment().weekday((i + swd)).format("d");
-                    if ((i - 1) % 2) {
-                        var wdl = this.settings.labels.custom.weekDayLabels;
-                        if ($.type(wdl) === "array") {
-                            dayName = wdl[dayNumber] || "";
-                        } else if ($.type(wdl) === "string") {
-                            dayName = moment().weekday((i + swd))
-                                .format(wdl);
-                        }
-                    } else {
-                        dayName = "&nbsp;";
-                    }
-                    $("<div>", {
-                            class: "ch-day-label",
-                            html: dayName
-                        })
-                        .appendTo($(".ch-day-labels", this.element));
-                }
-            }
-        },
         calendarHeatmap: function () {
             var data = this.parse();
 
