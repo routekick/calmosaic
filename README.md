@@ -11,10 +11,10 @@ This [jQuery] plugin allows to conveniently display data like contributions on a
 + Copy the cdn URL for `.min.js` and `.min.css` file and insert them into your html file
 
     ```html
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/routekick/jquery-calendar-heatmap/dist/jquery.CalendarHeatmap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/routekick/jquery-calendar-heatmap@2.0.0/dist/jquery.CalendarHeatmap.min.css" />
 
     <!-- Don't forget to add it after jQuery and moment -->
-    <script src="https://cdn.jsdelivr.net/gh/routekick/jquery-calendar-heatmap/dist/jquery.CalendarHeatmap.min.css"></script>
+    <script src="https://cdn.jsdelivr.net/gh/routekick/jquery-calendar-heatmap@2.0.0/dist/jquery.CalendarHeatmap.min.css"></script>
     ```
 
 ## Usage
