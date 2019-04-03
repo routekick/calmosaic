@@ -1,34 +1,28 @@
 {
-  "name": "jquery-calendar-heatmap",
+  "name": "calmosaic",
   "version": "2.0.1",
-  "description": "A simple Calendar Heatmap for jQuery.",
+  "description": "jQuery plugin to create github like contributions timeline",
   "keywords": [
     "jquery-plugin",
     "jquery",
     "calendar",
     "heatmap",
-    "plugins"
+    "plugins",
+    "calmosaic"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/SeBassTian23/CalendarHeatmap.git"
+    "url": "https://github.com/routekick/calmosaic.git"
   },
   "bugs": {
-    "url": "https://github.com/SeBassTian23/CalendarHeatmap/issues"
+    "url": "https://github.com/routekick/calmosaic/issues"
   },
+  "homepage": "https://github.com/routekick/calmosaic",
   "author": {
-    "name": "Sebastian Kuhlgert",
-    "email": "sebastian.kuhlgert@gmail.com",
-    "url": "https://github.com/SeBassTian23"
+      "name": "Routekick",
+      "url": "https://github.com/routekick",
+      "email": "info@routekick.com"
   },
-  "homepage": "https://github.com/SeBassTian23/CalendarHeatmap",
-  "contributors": [
-    {
-      "name": "Sebastian Kuhlgert",
-      "email": "sebastian.kuhlgert@gmail.com",
-      "url": "https://github.com/SeBassTian23"
-    }
-  ],
   "license": "MIT",
   "devDependencies": {
     "eslint": "^5.16.0",
@@ -43,6 +37,6 @@
   },
   "scripts": {
     "build": "grunt build",
-    "dev": "grunt dev"
+    "start": "grunt dev"
   }
 }

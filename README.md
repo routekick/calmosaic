@@ -1,20 +1,20 @@
-# jQuery  Calendar Heat Map
+# jQuery Calmosaic
 
-> This fork is very modified from the real project
+> Calmosaic (shoutcut for `/ calendar mosaic /`)
 
-This [jQuery] plugin allows to conveniently display data like contributions on a day by day basis, indicating the count by colors, using css grid system
+It's a `jQuery` plugin to display github like contributions timeline, using css grid system, with easy coloring system.
 
-![Calendar Heat Map](https://user-images.githubusercontent.com/17254073/55343067-ff8f3d00-54b2-11e9-918d-8cc26d3dccc0.PNG)
+![calmosaic demo](https://user-images.githubusercontent.com/17254073/55343067-ff8f3d00-54b2-11e9-918d-8cc26d3dccc0.PNG)
 
 ## Install
 
 + Copy the cdn URL for `.min.js` and `.min.css` file and insert them into your html file
 
     ```html
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/routekick/jquery-calendar-heatmap@2.0.1/dist/jquery.CalendarHeatmap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/routekick/calmosaic@2.0.1/dist/jquery.calmosaic.min.css" />
 
     <!-- Don't forget to add it after jQuery and moment -->
-    <script src="https://cdn.jsdelivr.net/gh/routekick/jquery-calendar-heatmap@2.0.1/dist/jquery.CalendarHeatmap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/routekick/calmosaic@2.0.1/dist/jquery.calmosaic.min.js"></script>
     ```
 
 ## Usage
@@ -29,7 +29,7 @@ This [jQuery] plugin allows to conveniently display data like contributions on a
 2. When the DOM is ready call the plugin:
 
     ```JavaScript
-    $("#element").CalendarHeatmap( data, options );
+    $("#element").calmosaic( data, options );
     ```
 
 ## Data
