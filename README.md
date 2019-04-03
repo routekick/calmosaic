@@ -11,10 +11,10 @@ It's a `jQuery` plugin to display github like contributions timeline, using css 
 + Copy the cdn URL for `.min.js` and `.min.css` file and insert them into your html file
 
     ```html
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/routekick/calmosaic@2.0.1/dist/jquery.calmosaic.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/routekick/calmosaic@2.1.0/dist/jquery.calmosaic.min.css" />
 
     <!-- Don't forget to add it after jQuery and moment -->
-    <script src="https://cdn.jsdelivr.net/gh/routekick/calmosaic@2.0.1/dist/jquery.calmosaic.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/routekick/calmosaic@2.1.0/dist/jquery.calmosaic.min.js"></script>
     ```
 
 ## Usage
