@@ -2,9 +2,9 @@
 <html>
 
 <head>
-    <title>jQuery Calendar Heatmap</title>
+    <title>jQuery Calmosaic</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="dist/jquery.CalendarHeatmap.min.css">
+    <link rel="stylesheet" type="text/css" href="dist/jquery.calmosaic.min.css">
     <style type="text/css">
         body {
             font-family: Arial, Helvetica, sans-serif;
@@ -19,13 +19,13 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
-    <script src="dist/jquery.CalendarHeatmap.min.js"></script>
+    <script src="dist/jquery.calmosaic.min.js"></script>
 </head>
 
 <body>
     <div class="container">
         <div class="col-md-12">
-            <h2>jQuery - Calendar Heatmap</h2>
+            <h2>jQuery - Calmosaic</h2>
             <hr>
         </div>
         <div class="col-md-12">
@@ -57,9 +57,9 @@
             });
         }
 
-        $("#heatmap-1").CalendarHeatmap(data, {});
+        $("#heatmap-1").calmosaic(data, {});
 
-        $("#heatmap-2").CalendarHeatmap(data, {
+        $("#heatmap-2").calmosaic(data, {
             title: "Gradient \"red\", end one month from current",
             lastMonth: moment().month(),
             coloring: "red",
@@ -73,7 +73,7 @@
             }
         });
 
-        $("#heatmap-3").CalendarHeatmap(data, {
+        $("#heatmap-3").calmosaic(data, {
             title: "Gradient \"electric\", labels days and custom month labels, end one year from current",
             months: 5,
             lastYear: moment().subtract(1, 'years').year(),
@@ -93,7 +93,7 @@
             }
         });
 
-        $("#heatmap-4").CalendarHeatmap([], {
+        $("#heatmap-4").calmosaic([], {
             title: "No Data"
         });
 

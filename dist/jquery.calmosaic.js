@@ -1,9 +1,17 @@
+/*
+ *  calmosaic - v2.1.0
+ *  jQuery plugin to create github like contributions timeline
+ *  https://github.com/routekick/calmosaic
+ *
+ *  Made by Routekick
+ *  Under MIT License
+ */
 /* global moment */
 (function ($) {
     "use strict";
 
     // Default Options
-    var pluginName = "CalendarHeatmap",
+    var pluginName = "calmosaic",
         defaults = {
             title: null,
             months: 12,
@@ -44,7 +52,7 @@
 
             // Check if the moment.js library is available.
             if (!moment) {
-                console.log("The calendar heatmap plugin requires moment.js");
+                console.log("The calmosaic plugin requires moment.js");
             }
         },
         parse: function () {

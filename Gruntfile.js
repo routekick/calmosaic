@@ -18,16 +18,16 @@ module.exports = function (grunt) {
 					banner: "<%= meta.banner %>"
 				},
 				files: {
-					"dist/jquery.CalendarHeatmap.js": "src/jquery.CalendarHeatmap.js",
-					"dist/jquery.CalendarHeatmap.css": "dist/jquery.CalendarHeatmap.css",
-					"dist/jquery.CalendarHeatmap.min.css": "dist/jquery.CalendarHeatmap.min.css"
+					"dist/jquery.calmosaic.js": "src/jquery.calmosaic.js",
+					"dist/jquery.calmosaic.css": "dist/jquery.calmosaic.css",
+					"dist/jquery.calmosaic.min.css": "dist/jquery.calmosaic.min.css"
 				}
 			}
 		},
 		uglify: {
 			dist: {
-				src: ["dist/jquery.CalendarHeatmap.js"],
-				dest: "dist/jquery.CalendarHeatmap.min.js"
+				src: ["dist/jquery.calmosaic.js"],
+				dest: "dist/jquery.calmosaic.min.js"
 			},
 			options: {
 				banner: "<%= meta.banner %>"
@@ -36,7 +36,7 @@ module.exports = function (grunt) {
 		less: {
 			production: {
 				files: {
-					"dist/jquery.CalendarHeatmap.css": "src/jquery.CalendarHeatmap.less"
+					"dist/jquery.calmosaic.css": "src/jquery.calmosaic.less"
 				}
 			}
 		},
@@ -47,7 +47,7 @@ module.exports = function (grunt) {
 			},
 			target: {
 				files: {
-					"dist/jquery.CalendarHeatmap.min.css": "dist/jquery.CalendarHeatmap.css"
+					"dist/jquery.calmosaic.min.css": "dist/jquery.calmosaic.css"
 				}
 			}
 		},
@@ -63,7 +63,7 @@ module.exports = function (grunt) {
 				logConcurrentOutput: true
 			},
 			dev: {
-				tasks: ["devserver", "watch"]
+				tasks: ["build", "devserver", "watch"]
 			}
 		}
 	});
