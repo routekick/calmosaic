@@ -1,17 +1,9 @@
-/*
- *  jquery-calendar-heatmap - v2.0.1
- *  A simple Calendar Heatmap for jQuery.
- *  https://github.com/SeBassTian23/CalendarHeatmap
- *
- *  Made by Sebastian Kuhlgert
- *  Under MIT License
- */
 /* global moment */
 (function ($) {
     "use strict";
 
     // Default Options
-    var pluginName = "CalendarHeatmap",
+    var pluginName = "calmosaic",
         defaults = {
             title: null,
             months: 12,
@@ -52,7 +44,7 @@
 
             // Check if the moment.js library is available.
             if (!moment) {
-                console.log("The calendar heatmap plugin requires moment.js");
+                console.log("The calmosaic plugin requires moment.js");
             }
         },
         parse: function () {
