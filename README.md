@@ -2,24 +2,24 @@
 
 > Calmosaic (shoutcut for `/ calendar mosaic /`)
 
-It's a `jQuery` plugin to display github like contributions timeline, using css grid system, with easy coloring system.
+A `jQuery` plugin to display a calender heatmap like Github's contributions timeline using modern CSS technologies.
 
 ![calmosaic demo](https://user-images.githubusercontent.com/17254073/55343067-ff8f3d00-54b2-11e9-918d-8cc26d3dccc0.PNG)
 
-## Install
+## Installation 
 
-+ Copy the cdn URL for `.min.js` and `.min.css` file and insert them into your html file
++ Copy the CDN URL for `.min.js` and `.min.css` files and insert them into your HTML file.
 
     ```html
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/routekick/calmosaic@2.1.0/dist/jquery.calmosaic.min.css" />
 
-    <!-- Don't forget to add it after jQuery and moment -->
+    <!-- Add it after jQuery and Moment.js libraries  -->
     <script src="https://cdn.jsdelivr.net/gh/routekick/calmosaic@2.1.0/dist/jquery.calmosaic.min.js"></script>
     ```
 
 ## Usage
 
-1. Include [jQuery] and [Moment.js] into the header of your html file:
+1. Include [jQuery] and [Moment.js] into the header of your HTML file:
 
     ```html
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
@@ -34,8 +34,7 @@ It's a `jQuery` plugin to display github like contributions timeline, using css 
 
 ## Data
 
-The provided date needs to be a valid [date format] that can be interpreted by [Moment.js].
-The date needs to provide at least year month and day, e.g. `YYYY-MM-DD`.
+The provided date needs to be a valid [date format] (e.g. `YYYY-MM-DD`) that can be interpreted by [Moment.js].
 
 ```JavaScript
 // Provide dates as an array of objects.
@@ -43,17 +42,17 @@ The date needs to provide at least year month and day, e.g. `YYYY-MM-DD`.
 var data = [{count: 2, date: "2017-09-23"}, ...]
 
 // Provide dates as an array.
-// The dates can have any format as long as year month and day are provided.
+// The dates can have any format as long as Year, Month and Day are provided.
 var data = [ "2017-09-23", ...]
 
 // Provide dates as an object.
-// The key is the date, the value is event count. Make sure the date has this format: `YYYY-MM-DD`
+// The key is the date, the value is events count. Make sure the date has this format: `YYYY-MM-DD`
 var data = { "2017-09-23": 2, ...}
 ```
 
 ## Options
 
-The Calendar Heat Map can be modified using the following options:
+Calmosaic can be modified using the following options:
 
 ```JavaScript
 // Default options for the heatmap
@@ -101,7 +100,7 @@ There is a set of different color gradients available. By default `standard` is 
 
 #### Available Color Gradients
 
-The following gradients are available based of [Matplotlib] for Python: `blue`, `earth`, `electric`, `green`, `picknick`, `red`, `teal`, `standard`, `viridis`. If you want to define your own color gradient, use `custom` and add the classes defining the colors to your css stylesheet as described below.
+The following gradients are available based of [Matplotlib] for Python: `blue`, `earth`, `electric`, `green`, `picknick`, `red`, `teal`, `standard`, `viridis`. If you want to define your own color gradient, use `custom` and add the classes defining the colors to your CSS stylesheet as described below.
 
 #### Custom Gradient
 
@@ -124,7 +123,7 @@ Just add the colors to be used for the 4 steps as in the example. In this case t
 
 ### labels (Skipped)
 
-The calendar heatmap has two sets of labels. One for week days and one for months. By default only the month labels are shown. The visibility can be set for either by setting them to `true` or `false`.
+Calmosaic has two sets of labels. One for week days and one for months. By default only the month labels are shown. The visibility can be set for either by setting them to `true` or `false`.
 
 #### Custom format
 
