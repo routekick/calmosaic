@@ -2,7 +2,7 @@
 
 > Calmosaic (shoutcut for `/ calendar mosaic /`)
 
-A `jQuery` plugin to display a calender heatmap like Github's contributions timeline using modern CSS technologies.
+A `jQuery` plugin to display a calendar heatmap like Github's contributions timeline using modern CSS technologies.
 
 ![calmosaic demo](https://user-images.githubusercontent.com/17254073/55343067-ff8f3d00-54b2-11e9-918d-8cc26d3dccc0.PNG)
 
